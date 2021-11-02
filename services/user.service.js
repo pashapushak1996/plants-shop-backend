@@ -8,7 +8,6 @@ const userService = {
     },
 
     findOneByParams: (param) => {
-        console.log(param);
         return UserModel.findOne(param).exec();
     }
 };

@@ -13,8 +13,6 @@ const { ErrorHandler } = require('./errors');
 
 const app = express();
 
-// TODO JOI connect
-
 _connectToDb();
 
 app.use(cors());
@@ -33,7 +31,8 @@ function _connectToDb() {
         mongoose.connect(DB_CONNECTION, {
             useNewUrlParser: true,
             useFindAndModify: false,
-            useUnifiedTopology: true
+            useUnifiedTopology: true,
+            useCreateIndex: true
         });
     } catch (e) {
         // TODO errorsEnum
